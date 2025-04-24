@@ -482,7 +482,9 @@ nav {
     border-color: var(--primary-color);
     box-shadow: 0 0 10px rgba(52, 152, 219, 0.2);
 }
-
+input[name="_honey"] {
+    display: none;
+}
 /* Footer */
 footer {
     background-color: var(--dark-color);
