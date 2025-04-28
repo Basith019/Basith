@@ -273,7 +273,7 @@ nav {
     width: 100%;
     height: 100%;
     background-color:gray;
-    animation: shine 2s infinite;
+    animation: shine 0s infinite;
 }
 
 @keyframes shine {
