@@ -5,9 +5,9 @@
     --accent-color: #e74c3c;
     --light-color: #ecf0f1;
     --dark-color: #2c3e50;
-    --text-color: #333;
+    --text-color: #ffffff;
     --text-light: #777;
-    --white: #fff;
+    --white: #000000;
     --black: #000;
     --transition: all 0.3s ease;
 }
