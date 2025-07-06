@@ -227,6 +227,9 @@ img {
     align-items: center;
 }
 
+span-1{
+    color: #4d44db;
+}
 .logo {
     font-size: 2rem;
     font-weight: 700;
