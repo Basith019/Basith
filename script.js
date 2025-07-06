@@ -1,42 +1,34 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Mobile Navigation
-    const burger = document.querySelector('.burger');
+    // Navbar scroll effect
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 100) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    // Mobile menu toggle
+    const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
-    const navItems = document.querySelectorAll('.nav-links li');
-    
-    burger.addEventListener('click', () => {
-        // Toggle Nav
+    hamburger.addEventListener('click', function() {
+        hamburger.classList.toggle('active');
         navLinks.classList.toggle('active');
-        
-        // Burger Animation
-        burger.classList.toggle('active');
-        
-        // Animate Links
-        navItems.forEach((link, index) => {
-            if (link.style.animation) {
-                link.style.animation = '';
-            } else {
-                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
-            }
-        });
     });
-    
-    // Close mobile menu when clicking on a link
-    navItems.forEach(item => {
-        item.addEventListener('click', () => {
+
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', function() {
+            hamburger.classList.remove('active');
             navLinks.classList.remove('active');
-            burger.classList.remove('active');
-            navItems.forEach(link => {
-                link.style.animation = '';
-            });
         });
     });
-    
-    // Smooth Scrolling for all links
+
+    // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
-            
             const targetId = this.getAttribute('href');
             const targetElement = document.querySelector(targetId);
             
@@ -46,22 +38,53 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     });
+
+    // Back to top button
+    const backToTopBtn = document.querySelector('.back-to-top');
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) {
+            backToTopBtn.classList.add('active');
+        } else {
+            backToTopBtn.classList.remove('active');
+        }
+    });
+
+    // Animate skill bars on scroll
+    const skillBars = document.querySelectorAll('.chart-progress');
+    function animateSkillBars() {
+        skillBars.forEach(bar => {
+            const percent = bar.getAttribute('data-percent');
+            if (isElementInViewport(bar)) {
+                bar.style.width = percent + '%';
+            }
+        });
+    }
+
+    function isElementInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return (
+            rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.bottom >= 0
+        );
+    }
+
+    window.addEventListener('scroll', animateSkillBars);
+    animateSkillBars(); // Run once on page load
+
+    // Project filtering
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectItems = document.querySelectorAll('.project-item');
     
-    // Work Filter
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const workItems = document.querySelectorAll('.work-item');
-    
-    filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
             // Remove active class from all buttons
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            
+            filterBtns.forEach(btn => btn.classList.remove('active'));
             // Add active class to clicked button
-            button.classList.add('active');
+            this.classList.add('active');
             
-            const filterValue = button.getAttribute('data-filter');
+            const filterValue = this.getAttribute('data-filter');
             
-            workItems.forEach(item => {
+            projectItems.forEach(item => {
                 if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
                     item.style.display = 'block';
                 } else {
@@ -70,88 +93,30 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     });
-    
-    // Animate Skills on Scroll
-    const skillBars = document.querySelectorAll('.skill-level');
-    
-    function animateSkills() {
-        skillBars.forEach(bar => {
-            const width = bar.style.width;
-            bar.style.width = '0';
-            
-            setTimeout(() => {
-                bar.style.width = width;
-            }, 100);
-        });
-    }
-    
-    // Intersection Observer for skills animation
-    const skillsSection = document.querySelector('.skills');
-    const observerOptions = {
-        threshold: 0.5
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                animateSkills();
-                observer.unobserve(entry.target);
+
+    // Project filtering
+const filterButtons = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.project-card');
+
+filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        // Remove active class from all buttons
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        // Add active class to clicked button
+        button.classList.add('active');
+        
+        const filter = button.getAttribute('data-filter');
+        
+        projectCards.forEach(card => {
+            if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
             }
         });
-    }, observerOptions);
-    
-    observer.observe(skillsSection);
-    
-    // Form Submission
-    const contactForm = document.querySelector('.contact-form');
-    
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Get form values
-        const name = this.querySelector('input[type="text"]').value;
-        const email = this.querySelector('input[type="email"]').value;
-        const subject = this.querySelector('input[type="text"]:nth-of-type(2)').value;
-        const message = this.querySelector('textarea').value;
-        
-        // Here you would typically send the form data to a server
-        console.log('Form submitted:', { name, email, subject, message });
-        
-        // Show success message
-        alert('Thank you for your message! I will get back to you soon.');
-        
-        // Reset form
-        this.reset();
     });
-    
-    // Sticky Header on Scroll
-    window.addEventListener('scroll', function() {
-        const header = document.querySelector('header');
-        header.classList.toggle('sticky', window.scrollY > 0);
-    });
-    
-    // Add sticky class to header initially if not at top
-    if (window.scrollY > 0) {
-        document.querySelector('header').classList.add('sticky');
-    }
 });
-window.addEventListener("DOMContentLoaded", function() {
-    window.AgentInitializer.init({
-      rootId: "JotformAgent-0196481178f572c4a47913a63cd19657da3a",
-      formID: "0196481178f572c4a47913a63cd19657da3a",
-      queryParams: ["skipWelcome=1", "maximizable=1"],
-      domain: "https:\/\/www.jotform.com",
-      isInitialOpen: false,
-      isDraggable: false,
-      background: "linear-gradient(180deg, #D3CBF4 0%, #3300ff 100%)",
-      buttonBackgroundColor: "#8797FF",
-      buttonIconColor: "#000000",
-      variant: false,
-      customizations: {
-        greeting: "Yes",
-        greetingMessage: "Hi! How can I assist you?",
-        pulse: "Yes",
-        position: "right"
-      }
-    });
-  });
+
+    // Text animation for hero section (already handled by CSS)
+    // The CSS animations are triggered automatically on page load
+});

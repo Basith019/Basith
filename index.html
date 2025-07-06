@@ -4,230 +4,385 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Basith</title>
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="shortcut icon" href="./image/basith.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo"><span>B</span>asith</div>
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#work">Work</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                <div class="burger">
-                    <div class="line1"></div>
-                    <div class="line2"></div>
-                    <div class="line3"></div>
-                </div>
-            </nav>
-        </div>
-    </header>
+    <!-- Animated Background Elements -->
+    <div class="bg-elements">
+        <div class="circle"></div>
+        <div class="square"></div>
+        <div class="triangle"></div>
+    </div>
 
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">BASITH</a>
+            <div class="nav-links">
+                <a href="#home" class="active">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Hi, I'm <span class="highlight">Abdul Basith</span></h1>
-                <h2>Student</h2>
-                <p>I create beautiful, functional websites that help businesses grow.</p>
-                <a href="#work" class="btn">View My Work</a>
+                <h1 class="hero-title">
+                    <span class="title-word title-word-1">Hello,</span>
+                    <span class="title-word title-word-2">I'm</span>
+                    <span class="title-word title-word-3">Abdul</span>
+                    <span class="title-word title-word-4">Basith</span>
+                </h1>
+                <h2 class="hero-subtitle">
+                    <b>I'm</b>  <span id="typed-subtitle"></span>
+                </h2>
+                <p class="hero-text">I create beautiful, functional digital experiences with a focus on user-centered design.</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                </div>
             </div>
             <div class="hero-image">
-                <img src="./image/download (1).jpg" alt="">
+                <div class="image-wrapper">
+                    <img src="basith.jpeg" alt="Abdul Basith">
+                    <div class="image-border"></div>
+                </div>
+                 <div class="hero-tech-stack">
+                    <div class="tech-icon"><i class="fab fa-html5"></i></div>
+                    <div class="tech-icon"><i class="fab fa-css3-alt"></i></div>
+                    <div class="tech-icon"><i class="fab fa-js"></i></div>
+                    <div class="tech-icon"><i class="fab fa-react"></i></div>
+                    <div class="tech-icon"><i class="fab fa-vuejs"></i></div>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
+            <div class="section-header">
+                <h2 class="section-title">About <span>Me</span></h2>
+                <div class="section-divider"></div>
+            </div>
             <div class="about-content">
                 <div class="about-image">
-                    <img src="./image/парные.jpg" alt="About Me">
+                    <div class="image-wrapper">
+                        <img src="basith.jpeg" alt="About Abdul Basith">
+                    </div>
                 </div>
                 <div class="about-text">
-                    <p>I'm a passionate web developer with 0 years of experience creating modern and responsive websites. I specialize in front-end development but also have experience with back-end technologies.</p>
-                    
+                    <h3>Who am I?</h3>
+                    <p>I'm Abdul Basith, a passionate web designer and developer based in India. With a strong foundation in web technologies, I specialize in creating engaging and user-friendly websites.</p>
+                    <p>My expertise lies in HTML, CSS, and JavaScript, with a keen eye for design and user experience. I love turning complex problems into simple, beautiful solutions.</p>
+                    <div class="about-details">
+                        <div class="detail-item">
+                            <span>Name:</span>
+                            <p>Abdul Basith</p>
+                        </div>
+                        <div class="detail-item">
+                            <span>Email:</span>
+                            <p>basithmm99@gmail.com</p>
+                        </div>
+                        <div class="detail-item">
+                            <span>From:</span>
+                            <p>India</p>
+                        </div>
+                        <div class="detail-item">
+                            <span>Experience:</span>
+                            <p>0 Years</p>
+                    </div>
+                    <a href="#" class="btn btn-primary">Download CV</a>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Skills Section -->
     <section id="skills" class="skills">
         <div class="container">
-            <h2 class="section-title">My Skills</h2>
-            <div class="skills-container">
-                <div class="skill-item">
-                    <div class="skill-info">
-                        <span>HTML</span>
-                        <span>40%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-level html"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-info">
-                        <span>CSS</span>
-                        <span>35%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-level css"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-info">
-                        <span>JavaScript</span>
-                        <span>10%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-level javascript"></div>
+            <div class="section-header">
+                <h2 class="section-title">My Skills</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="skills-content">
+                <div class="skills-intro">
+                    <h3>Technical Expertise</h3>
+                    <p>I've worked with a variety of technologies across Designer . Here are the tools I use most frequently:</p>
+                    <div class="skills-categories">
+                        <div class="skill-category">
+                            <h4>Frontend</h4>
+                            <ul>
+                                <li>HTML & CSS</li>
+                                <li>JavaScript</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Design</h4>
+                            <ul>
+                                <li>Photoshop</li>
+                                <li>Illustrator</li>
+                                <li>Indesign</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-                <div class="skill-item">
-                    <div class="skill-info">
-                        <span>React</span>
-                        <span>0%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-level react"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-info">
-                        <span>Node.js</span>
-                        <span>0%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-level node"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-info">
-                        <span>UI/UX Design</span>
-                        <span>40%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-level design"></div>
+                <div class="skills-visual">
+                    <div class="skill-orb">
+                        <div class="orb-center">SKILLS</div>
+                        <div class="skill-item"><i class="fab fa-html5"></i></div>
+                        <div class="skill-item"><i class="fab fa-css3-alt"></i></div>
+                        <div class="skill-item"><i class="fab fa-js"></i></div>
+                        <div class="skill-item"><i class="fab fa-react"></i></div>
+                        <div class="skill-item"><i class="fab fa-vuejs"></i></div>
+                        <div class="skill-item"><i class="fab fa-sass"></i></div>
+                        <div class="skill-item"><i class="fab fa-git-alt"></i></div>
+                        <div class="skill-item"><i class="fab fa-node-js"></i></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="work" class="work">
+        <!-- Projects Section -->
+    <section id="projects" class="projects">
         <div class="container">
-            <h2 class="section-title">My Work</h2>
-            <div class="filter-buttons">
+            <div class="section-header">
+                <h2 class="section-title">My <span>Projects</span></h2>
+                <div class="section-divider"></div>
+            </div>
+            
+            <div class="project-filters">
                 <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="web">Web</button>
+                <button class="filter-btn" data-filter="web">Web Design</button>
                 <button class="filter-btn" data-filter="design">Design</button>
             </div>
-            <div class="work-container">
-                <div class="work-item" data-category="web">
-                    <img src="./image/epoch zero.png" alt="Project 1">
-                    <div class="work-overlay">
-                        <h3>Epoch Zero</h3>
-                        <p>Epoch Zero is a comprehensive platform that brings together information about AI-themed media.</p>
-                        <a href="https://basith019.github.io/Epoch-Zero/" class="work-link">View Site</a>
+            
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card" data-category="web">
+                    <div class="project-image">
+                        <img src="image/epoch zero.png" alt="Project 1">
+                        <div class="project-overlay">
+                            <h3>Epoch-Zero Website</h3>
+                            <p>Fully responsive Epoch-Zero site with AI</p>
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fas fa-link"></i></a>
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Epoch-Zero Website</h3>
                     </div>
                 </div>
-                <div class="work-item" data-category="design">
-                    <img src="./image/Green Glass Logo Mockup - PHOTOPEA.png" alt="Project 2">
-                    <div class="work-overlay">
-                        <h3>Epoch Zero</h3>
-                        <p>AI startup company</p>
-                        <a href="./image/Green Glass Logo Mockup - PHOTOPEA.png" class="work-link">View Logo</a>
+                
+                <!-- Project 2 -->
+                <div class="project-card" data-category="design">
+                    <div class="project-image">
+                        <img src="image/Green Glass Logo Mockup - PHOTOPEA.png" alt="Project 2">
+                        <div class="project-overlay">
+                            <h3>Epoch-Zero Logo</h3>
+                            <p>Epoch-Zero Website</p>
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fas fa-link"></i></a>
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Epoch-Zero Logo</h3>
                     </div>
                 </div>
-                <div class="work-item" data-category="design">
-                    <img src="./image/jazora.jpg" alt="Project 3">
-                    <div class="work-overlay">
-                        <h3>Jazora</h3>
-                        <p>startup company</p>
-                        <a href="./image/jazora.jpg" class="work-link">View Logo</a>
+                
+                <!-- Project 3 -->
+                <div class="project-card" data-category="design">
+                    <div class="project-image">
+                        <img src="image/basith.jpeg" alt="Project 3">
+                        <div class="project-overlay">
+                            <h3>Basith Logo</h3>
+                            <p>for Logo</p>
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fas fa-link"></i></a>
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Basith Logo</h3>
                     </div>
                 </div>
-                 <div class="work-item" data-category="design">
-                    <img src="./image/basith.jpeg" alt="Project 4">
-                    <div class="work-overlay">
-                        <h3>Basith</h3>
-                        <p>My personal logo</p>
-                        <a href="./image/basith.jpeg" class="work-link">View Logo</a>
+                
+                <!-- Project 4 -->
+                <div class="project-card" data-category="design">
+                    <div class="project-image">
+                        <img src="image/jazora.jpg" alt="Project 4">
+                        <div class="project-overlay">
+                            <h3>Jazora Log</h3>
+                            <p>Logo and branding for a startup company</p>
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fas fa-link"></i></a>
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Jazora Log</h3>
                     </div>
                 </div>
-                <div class="work-item" data-category="design">
-                    <img src="./image/Paper Logo Mockup PHOTOPEA.jpg" alt="Project 5">
-                    <div class="work-overlay">
-                        <h3>Basith</h3>
-                        <p>logo</p>
-                        <a href="./image/Paper Logo Mockup PHOTOPEA.jpg" class="work-link">View Logo</a>
+                
+                <!-- Project 5 -->
+                <div class="project-card" data-category="design">
+                    <div class="project-image">
+                        <img src="image/Paper Logo Mockup PHOTOPEA.jpg" alt="Project 5">
+                        <div class="project-overlay">
+                            <h3>Just Logo</h3>
+                            <p>Nothing</p>
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fas fa-link"></i></a>
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Just Logo</h3>
                     </div>
                 </div>
+                
             </div>
         </div>
     </section>
 
+    <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-container">
+            <div class="section-header">
+                <h2 class="section-title">Get In <span>Touch</span></h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="contact-content">
                 <div class="contact-info">
+                    <h3>Let's Talk About Your Project</h3>
+                    <p>I'm currently available for freelance work or full-time positions. Feel free to reach out with any questions or just to say hello!</p>
                     <div class="info-item">
                         <i class="fas fa-envelope"></i>
-                        <p>malayalidevhub@gmail.com</p>
+                        <div>
+                            <h4>Email</h4>
+                            <p>basithmm99@gmail.com</p>
+                        </div>
                     </div>
                     <div class="info-item">
                         <i class="fas fa-phone"></i>
-                        <p>+91 949 666 0968</p>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+91 9496 660 968</p>
+                        </div>
                     </div>
                     <div class="info-item">
                         <i class="fas fa-map-marker-alt"></i>
-                        <p>India, Kerala, Malappuram.</p>
+                        <div>
+                            <h4>Location</h4>
+                            <p>India, Kerala, Malappuram.</p>
+                        </div>
                     </div>
                     <div class="social-links">
-                        <a href="https://github.com/Basith019"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/malayali-dev-hub-32a435361/"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://x.com/basithmalayali"><i class="fab fa-twitter"></i></a>
-                        <a href="https://www.youtube.com/@MalayaliDevHub"><i class="fab fa-youtube"></i></a>
-                        <a href="https://www.instagram.com/basith_m2"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/basith-mm/"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://dribbble.com/malayali-dev-hub"><i class="fab fa-dribbble"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
-                <form class="contact-form " action="https://api.web3forms.com/submit" method="POST">
-                    <h2>Contact Us</h2>
-                    <input type="hidden" name="access_key" value="31c04841-ae8d-43a6-ae11-eb1d2f9acc94"/>
-                    <div class="form-group">
-                    <input type="hidden" name="access_key" value="31c04841-ae8d-43a6-ae11-eb1d2f9acc94"/>
-                    <input type="text" name="name" placeholder="Your Name" required />
-                    </div>
-                    <div class="form-group">
-                    <input type="hidden" name="access_key" value="31c04841-ae8d-43a6-ae11-eb1d2f9acc94"/>
-                    <input type="email" name="email" placeholder="Your Email" required />
-                    </div>
-                    <div class="form-group">
-                    <input type="hidden" name="access_key" value="31c04841-ae8d-43a6-ae11-eb1d2f9acc94"/>
-                    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-                    </div>
-                
-                    <button type="submit" class="btn">Send</button>
-                  </form>
+                <div class="contact-form">
+                    <form id="contactForm" action="https://formsubmit.co/malayalidevhub@gmail.com" method="POST">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" name="subject" placeholder="Subject">
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
- 
-    <footer>
+
+    <!-- Footer -->
+    <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 iam Basith. from India.</p>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="#">Basith</a>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/basith-mm/"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://dribbble.com/malayali-dev-hub"><i class="fab fa-dribbble"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; Abdul Basith. All rights reserved.</p>
+            </div>
         </div>
     </footer>
-    
-   <script src="https://cdn.jotfor.ms/s/umd/latest/for-embedded-agent.js"></script>
-    <script src="https://cdn.jotfor.ms/s/umd/latest/for-embedded-agent.js"></script>
+
+    <!-- Back to Top Button -->
+    <a href="#home" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
     <script src="script.js"></script>
+    <script>
+const words = ["Student", "Blogger",];
+let wordIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+const subtitle = document.getElementById("typed-subtitle");
+
+function typeEffect() {
+  const currentWord = words[wordIndex];
+  if (isDeleting) {
+    subtitle.textContent = currentWord.substring(0, charIndex--);
+    if (charIndex < 0) {
+      isDeleting = false;
+      wordIndex = (wordIndex + 1) % words.length;
+      setTimeout(typeEffect, 500);
+    } else {
+      setTimeout(typeEffect, 50);
+    }
+  } else {
+    subtitle.textContent = currentWord.substring(0, charIndex++);
+    if (charIndex > currentWord.length) {
+      isDeleting = true;
+      setTimeout(typeEffect, 1200);
+    } else {
+      setTimeout(typeEffect, 100);
+    }
+  }
+}
+typeEffect();
+</script>
+
 </body>
 </html>
