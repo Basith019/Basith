@@ -227,7 +227,7 @@ img {
     align-items: center;
 }
 
-span-1{
+span{
     color: #4d44db;
 }
 .logo {
@@ -1053,6 +1053,7 @@ b{
     font-size: 2rem;
     font-weight: 700;
     color: var(--white);
+    justify-content: center;
     font-family: 'Playfair Display', serif;
 }
 
