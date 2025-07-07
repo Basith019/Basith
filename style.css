@@ -1054,6 +1054,7 @@ b{
     font-weight: 700;
     color: var(--white);
     justify-content: center;
+    align-items: center;
     font-family: 'Playfair Display', serif;
 }
 
