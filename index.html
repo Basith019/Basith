@@ -10,6 +10,7 @@
     <link rel="shortcut icon" href="image/Logo.ico" type="image/x-icon">
 </head>
 <body>
+    
     <!-- Animated Background Elements -->
     <div class="bg-elements">
         <div class="circle"></div>
@@ -381,6 +382,7 @@
             </div>
         </div>
     </section>
+    
 
     <!-- Footer -->
     <footer class="footer">
@@ -431,6 +433,51 @@ function typeEffect() {
 }
 typeEffect();
 </script>
+
+
+  <!-- SCRIPT -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    /* Particle Cursor Animation */
+    document.addEventListener("mousemove", function (e) {
+      let particle = document.createElement("span");
+      particle.classList.add("particle");
+      document.body.appendChild(particle);
+
+      let x = e.clientX;
+      let y = e.clientY;
+
+      particle.style.left = x + "px";
+      particle.style.top = y + "px";
+
+      let size = Math.random() * 10;
+      particle.style.width = 5 + size + "px";
+      particle.style.height = 5 + size + "px";
+
+      setTimeout(() => {
+        particle.remove();
+      }, 1000);
+    });
+  </script>
+
+  <style>
+    .particle {
+      position: fixed;
+      border-radius: 50%;
+      background: #00e0ff;
+      pointer-events: none;
+      opacity: 0.8;
+      transform: translate(-50%, -50%);
+      animation: fadeOut 1s linear forwards;
+    }
+
+    @keyframes fadeOut {
+      to {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0);
+      }
+    }
+  </style>
 
 </body>
 </html>
